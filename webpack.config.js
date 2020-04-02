@@ -2,16 +2,17 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 // const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-module.exports = {
+const config = {
     mode: 'development',
     target: 'node',
     entry: {
         'main': path.resolve(__dirname, 'app/index.js'),
     },
     output: {
-        filename: '[name].bundle.js',
+        filename: '[name].[hash].bundle.js',
         path: path.resolve(__dirname, 'dist')
     },
+    devtool: 'inline-source-map',
     module: {
         rules: [
             {
@@ -30,7 +31,8 @@ module.exports = {
                             ]
                         }
                     }
-                ]
+                ],
+                exclude: /node_modules/
             },
             // {
             //     test: /\.(scss|css)$/,
@@ -54,20 +56,6 @@ module.exports = {
             //         // }
             //     ]
             // },
-            // {
-            //     test: /\.php$/,
-            //     use: [
-            //         {
-            //             loader: path.resolve(__dirname, 'loader/stringify.js')
-            //         }
-            //         // {
-            //         //     loader: 'file-loader',
-            //         //     options: {
-            //         //         name: 'css/template.txt'
-            //         //     }
-            //         // }
-            //     ]
-            // }
         ]
     },
     resolve: {
@@ -85,16 +73,6 @@ module.exports = {
         //     filename: 'dist/style.css'
         // })
     ],
-    devServer: {
-        port: 3000,
-        host: '0.0.0.0',
-        disableHostCheck: true,
-        // contentBase: path.resolve(__dirname, 'dist'),
-        // publicPath: '/',
-        historyApiFallback: true,
-        headers: {
-            'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Headers': '*',
-        },
-    },
 };
+
+module.exports = config;

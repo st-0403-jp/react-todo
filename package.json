@@ -5,9 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prestart": "npm run build",
-    "start": "webpack-dev-server --open --inline",
-    "build": "webpack"
+    "prestart": "npm run clean",
+    "start": "webpack-dev-server --open --port 3000",
+    "clean": "rm -rf dist",
+    "prebuild": "npm run clean",
+    "build": "webpack --mode=production"
   },
   "author": "",
   "license": "ISC",
