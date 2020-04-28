@@ -1,0 +1,22 @@
+.content {
+    max-width: 900px;
+    padding: 30px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.description {
+    margin-bottom: 50px;
+}
+
+.icon {
+    font-size: 3rem;
+}

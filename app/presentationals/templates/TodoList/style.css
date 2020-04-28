@@ -1,0 +1,29 @@
+.list li {
+    height: 40px;
+    padding: 0 10px;
+    white-space: nowrap;
+    border: 2px solid #aaa;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.list_item_unit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.list_item_unit_icon i {
+    margin-left: 5px;
+}
+
+.icon_check {
+    font-size: 1.5rem;
+    color: green;
+}
+
+.icon_cross {
+    font-size: 1.5rem;
+    color: red;
+}
