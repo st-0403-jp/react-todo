@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "prestart": "npm run clean",
     "start": "webpack-dev-server --history-api-fallback --open --port 3000",
     "clean": "rm -rf dist",
