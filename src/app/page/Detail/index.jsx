@@ -1,8 +1,9 @@
 import React from 'react';
+import ReactRouterPropTypes from 'react-router-prop-types';
 import css from './style.css';
 import TodoDetail from '../../presentationals/templates/TodoDetail';
 
-import dataJson from '../../../assets/mockTask.json';
+import dataJson from '../../../assets/mock.task.json';
 
 class Detail extends React.Component {
     getId () {
@@ -25,6 +26,10 @@ class Detail extends React.Component {
             </div>
         );
     }
+}
+
+Detail.propTypes = {
+    location: ReactRouterPropTypes.location.isRequired
 }
 
 export default Detail;

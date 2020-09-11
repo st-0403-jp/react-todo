@@ -1,3 +1,15 @@
 .wrap {
     padding: 30px;
 }
+
+.new_btn {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    background-color: #0099FF;
+    color: #fff
+}

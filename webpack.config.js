@@ -8,7 +8,7 @@ const config = {
     mode: 'development',
     target: 'node',
     entry: {
-        'main': path.resolve(__srcname, 'app/index.js'),
+        'main': path.resolve(__srcname, 'app/index.jsx'),
     },
     output: {
         filename: '[name].[hash].bundle.js',
@@ -17,6 +17,15 @@ const config = {
     devtool: 'inline-source-map',
     module: {
         rules: [
+            // {
+            //     enforce: "pre",
+            //     test: /(\.js|\.jsx)$/,
+            //     exclude: /(node_modules | dist)/,
+            //     loader: "eslint-loader",
+            //     options: {
+            //         fix: true
+            //     }
+            // },
             {
                 test: /(\.js|\.jsx)$/,
                 use: [

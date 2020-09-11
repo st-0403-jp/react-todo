@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import css from './style.css';
 
 const iconData = [
@@ -6,7 +7,7 @@ const iconData = [
     ['cross', `fas fa-times-circle ${css.icon_cross}`]
 ];
 
-class TodoDetail extends React.Component {
+class Icon extends React.Component {
     render () {
         const { type } = this.props;
         const iconDataMap = new Map(iconData);
@@ -14,4 +15,8 @@ class TodoDetail extends React.Component {
     }
 }
 
-export default TodoDetail;
+Icon.propTypes = {
+    type: PropTypes.string
+}
+
+export default Icon;

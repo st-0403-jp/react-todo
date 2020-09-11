@@ -1,8 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import css from './style.css';
 import Icon from '../../atoms/icon';
 
 class TodoDetail extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
     render () {
         const { data } = this.props;
         return (
@@ -15,6 +20,13 @@ class TodoDetail extends React.Component {
                 </div>
             </div>
         );
+    }
+}
+
+TodoDetail.propTypes = {
+    data: {
+        title: PropTypes.string,
+        description: PropTypes.string
     }
 }
 
