@@ -30,10 +30,17 @@ class Layout extends React.Component {
 
 class Router extends React.Component {
     render() {
+        const storeProps = {
+            storeTasks: this.props.tasks,
+            actions: {
+                addTasks: this.props.addTasks
+            }
+        };
+
         return (
             <BrowserRouter>
                 <Layout>
-                    <Route exact path="/" component={List}></Route>
+                    <Route exact path="/" render={() => <List {...storeProps} />}></Route>
                     <Route path="/detail" component={Detail}></Route>
                 </Layout>
             </BrowserRouter>
@@ -50,7 +57,7 @@ const mapStateToProps = store => ({
 // 関数の管理をする関数
 const mapDispatchToProps = dispatch => {
     return {
-        add: payload => dispatch(actionAddTasks(payload))
+        addTasks: payload => dispatch(actionAddTasks(payload))
     };
 };
 

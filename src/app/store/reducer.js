@@ -8,11 +8,8 @@ function reducer(state, action) {
                 tasks: action.payload.concat()
             }
         case actionTypes.ADD_TASK:
-            const prevState = {
-                ...state
-            };
-            prevState.tasks.push({...action.payload});
-            const nextState = {...prevState};
+            state.tasks.push(action.payload);
+            const nextState = JSON.parse(JSON.stringify(state));
             return nextState;
         default:
             return state
